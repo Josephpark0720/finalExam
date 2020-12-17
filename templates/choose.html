@@ -1,0 +1,155 @@
+<html>
+<head>
+<title>SHOPPING</title>
+<script type="text/javascript">
+
+function buttonclick1() {
+    document.getElementById("apple").value++;
+}
+
+function buttonrightclick1() {
+    document.getElementById("apple").value--;
+}
+
+function buttonclick2() {
+    document.getElementById("orange").value++;
+}
+
+function buttonrightclick2() {
+    document.getElementById("orange").value--;
+}
+
+function buttonclick3() {
+    document.getElementById("banana").value++;
+}
+
+function buttonrightclick3() {
+    document.getElementById("banana").value--;
+}
+
+function buttonclick4() {
+    document.getElementById("watermelon").value++;
+}
+
+function buttonrightclick4() {
+    document.getElementById("watermelon").value--;
+}
+
+function info() {
+    var a = document.getElementById(`apple`).value
+    document.getElementById(`apple_info`).innerHTML = "Apple   " + a * 1000
+
+    var b = document.getElementById(`orange`).value
+    document.getElementById(`orange_info`).innerHTML = "Orange   " + b * 1500
+
+    var c = document.getElementById(`banana`).value
+    document.getElementById(`banana_info`).innerHTML = "Banana   " + c * 2000
+
+    var d = document.getElementById(`watermelon`).value
+    document.getElementById(`watermelon_info`).innerHTML = "Watermelon   " + d * 2500
+
+    var e = a*1000+b*1500+c*2000+d*2500
+    document.getElementById('total').innerHTML = "Total " + e
+
+    var f = document.getElementById('name').value
+    document.getElementById('purchase_name').innerHTML = "User Name: " + f
+
+    var g = document.getElementById('st_num').value
+    document.getElementById('purchase_st_num').innerHTML = "Student Number: " + g
+
+    var j = document.getElementById('method').value
+    document.getElementById(`purchase_method`).innerHTML = "Purchase Method: " + j
+
+    var k = a*1000+b*1500+c*2000+d*2500
+    document.getElementById('total2').innerHTML = "Total Payment: " + k
+}
+
+</script>
+<style>
+div.gallery {
+    margin: 5px;
+    margin-left: auto;
+    margin-righ: auto;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+<div style="margin-left: auto; margin-right: auto; width: 50%;">
+    <div class="gallery">
+        <img id="myImage1" src="https://5.imimg.com/data5/YY/EN/MY-8155364/fresh-apple-500x500.jpg" width="200" height="100" onclick="buttonclick1()" oncontextmenu="buttonrightclick1()">
+        <div class="desc">1000 won</div>
+        <input id="apple" type="number" value="0">
+    </div>
+    <div class="gallery">
+        <img id="myImage2" src="https://5.imimg.com/data5/VN/YP/MY-33296037/orange-600x600-500x500.jpg" width="200" height="100" onclick="buttonclick2()" oncontextmenu="buttonrightclick2()">
+        <div class="desc">1500 won</div>
+        <input id="orange" type="number" value="0">
+    </div>
+    <div class="gallery">
+        <img id="myImage3" src="https://www.lima-europe.eu/wp-content/uploads/2017/04/Banana.jpg" width="200" height="100" onclick="buttonclick3()" oncontextmenu="buttonrightclick3()">
+        <div class="desc">2000 won</div>
+        <input id="banana" type="number" value="0">
+    </div>
+    <div class="gallery">
+        <img id="myImage4" src="https://i5.walmartimages.com/asr/624f8431-b244-4b3a-9864-eca1268d6b37.85304a9e75827db6de5e2da988b22b7e.jpeg?odnWidth=612&odnHeight=612&odnBg=ffffff" width="200" height="100" onclick="buttonclick4()" oncontextmenu="buttonrightclick4()">
+        <div class="desc">2500 won</div>
+        <input id="watermelon" type="number" value="0">
+    </div>
+    <br>
+    <div>
+        <input style="margin-left: 180px; width: 50%;" type="button" onclick="info()" value="Calculate">
+    </div>
+
+</div>
+
+<div style="position: relative; height: 200px; width: 1000px; margin-left: 350px;">
+        <p id="apple_info"></p>
+        <p id="orange_info"></p>
+        <p id="banana_info"></p>
+        <p id="watermelon_info"></p>
+        <p>-------------------------</p>
+        <p id="total"></p>
+</div>
+<br><br>
+<div style="position: relative; height: 100px; width: 1000px; margin-left: 350px;">
+    <h3>USER INFO</h3>
+    Name: <input type="text" id="name" value=""><br>
+    Student Number: <input type="text" id="st_num" value=""><br>
+</div>
+<div style="position: relative; height: 200px; width: 1000px; margin-left: 350px;">
+    <h3>PURCHASE METHOD</h3>
+    <input type="radio" id="method" name="method" value="Card">Card<br>
+    <input type="radio" id="method" name="method" value="Bank Transfer">Bank Transfer<br>
+    <input type="radio" id="method" name="method" value="Phone Transaction">Phone Transaction<br>
+    <input type="radio" id="method" name="method" value="Bank Deposit">Bank Deposit<br><br>
+    <input type="button" onclick="info()" value="Purchase">
+</div>
+<div style="position: relative; height: 300px; width: 1000px; margin-left: 350px;">
+    <p id="purchase_name"></p>
+    <p id="purchase_st_num"></p>
+    <a></a>
+    <p id="total2"></p>
+    <p id="purchase_method"></p>
+<div>
+
+</body>
+
+</html>
